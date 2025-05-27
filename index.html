@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Copa Nova Kids - Rol de Juegos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="./logo.png" alt="">
+  <div class="container">
+    <h1>Copa Nova Kids - Rol de Juegos</h1>
+    <div class="columns">
+      <div class="column">
+        <h2>Cancha 1 - Estrellitas</h2>
+        <table>
+          <thead>
+            <tr>
+            <th>#</th>
+              <th>Hora</th>
+              <th>Fase</th>
+              <th>Equipo A</th>
+              <th>Equipo B</th>
+              <th>Ganador</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="cancha1"></tbody>
+        </table>
+      </div>
+
+      <div class="column">
+        <h2>Cancha 2 - Supernova</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Hora</th>
+              <th>Fase</th>
+              <th>Equipo A</th>
+              <th>Equipo B</th>
+              <th>Ganador</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="cancha2"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="standings">
+      <h2>🏅 Tabla de Posiciones</h2>
+      <div class="tables">
+        <div>
+          <h3>Estrellitas - Grupo A</h3>
+          <table>
+            <thead>
+              <tr><th>Equipo</th><th>Puntos</th></tr>
+            </thead>
+            <tbody id="tabla1A"></tbody>
+          </table>
+        </div>
+        <div>
+          <h3>Estrellitas - Grupo B</h3>
+          <table>
+            <thead>
+              <tr><th>Equipo</th><th>Puntos</th></tr>
+            </thead>
+            <tbody id="tabla1B"></tbody>
+          </table>
+        </div>
+        <div>
+          <h3>Supernova - Grupo A</h3>
+          <table>
+            <thead>
+              <tr><th>Equipo</th><th>Puntos</th></tr>
+            </thead>
+            <tbody id="tabla2A"></tbody>
+          </table>
+        </div>
+        <div>
+          <h3>Supernova - Grupo B</h3>
+          <table>
+            <thead>
+              <tr><th>Equipo</th><th>Puntos</th></tr>
+            </thead>
+            <tbody id="tabla2B"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
