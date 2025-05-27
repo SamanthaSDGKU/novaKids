@@ -16,10 +16,10 @@ const juegos = {
     { time: "14:40", phase: "Grupo B", teamA: "Est5", teamB: "Est8" },
     { time: "15:20", phase: "Grupo B", teamA: "Est6", teamB: "Est7" },
 
-    // Estrellitas - Eliminación
+    // Estrellitas - finales
     { time: "16:00", phase: "Semifinal 1", teamA: "1° Grupo A", teamB: "2° Grupo B" },
-    { time: "16:40", phase: "Semifinal 2", teamA: "1° Grupo B", teamB: "2° Grupo A" },
-    { time: "17:20", phase: "Final", teamA: "Ganador SF1", teamB: "Ganador SF2" }
+    { time: "17:00", phase: "Semifinal 2", teamA: "1° Grupo B", teamB: "2° Grupo A" },
+    { time: "18:0", phase: "Final", teamA: "Ganador SF1", teamB: "Ganador SF2" }
   ],
   cancha2: [
     // Supernova - Grupo A
@@ -38,12 +38,14 @@ const juegos = {
     { time: "14:40", phase: "Grupo B", teamA: "Sup5", teamB: "Sup8" },
     { time: "15:20", phase: "Grupo B", teamA: "Sup6", teamB: "Sup7" },
 
-    // Supernova - Eliminación
+    // Supernova - finales
     { time: "16:00", phase: "Semifinal 1", teamA: "1° Grupo A", teamB: "2° Grupo B" },
-    { time: "16:40", phase: "Semifinal 2", teamA: "1° Grupo B", teamB: "2° Grupo A" },
-    { time: "17:20", phase: "Final", teamA: "Ganador SF1", teamB: "Ganador SF2" }
+    { time: "17:00", phase: "Semifinal 2", teamA: "1° Grupo B", teamB: "2° Grupo A" },
+    { time: "18:00", phase: "Final", teamA: "Ganador SF1", teamB: "Ganador SF2" }
   ]
 };
+
+// ... juegos definido como antes ...
 
 let puntos = JSON.parse(localStorage.getItem('puntos')) || {
   cancha1: { "Grupo A": {}, "Grupo B": {} },
@@ -56,22 +58,23 @@ function crearFila(juego, index, canchaId) {
   const row = document.createElement('tr');
   const id = `${canchaId}-${index}`;
 
-  const savedResult = resultados[id] || "";
+  const saved = resultados[id] || { ganador: "", sets: ["", ""] };
 
   row.innerHTML = `
-    <td>${index+1}</td>
+    <td>${index}</td>
     <td>${juego.time}</td>
     <td>${juego.phase}</td>
     <td>${juego.teamA}</td>
     <td>${juego.teamB}</td>
     <td>
-      <select id="winner-${id}">
-        <option value="">--</option>
-        <option value="${juego.teamA}" ${savedResult === juego.teamA ? "selected" : ""}>${juego.teamA}</option>
-        <option value="${juego.teamB}" ${savedResult === juego.teamB ? "selected" : ""}>${juego.teamB}</option>
-      </select>
+      <input type="number" id="set1-${id}" value="${saved.sets[0]}" placeholder="S1A" min="0" max="21" /><br>
+      <input type="number" id="set2-${id}" value="${saved.sets[1]}" placeholder="S2A" min="0" max="21" />
     </td>
-    <td><button onclick="registrarGanador('${canchaId}', '${id}', '${juego.teamA}', '${juego.teamB}', '${juego.phase}')">Registrar</button></td>
+    <td>
+      <input type="number" id="set1b-${id}" value="${saved.sets[2]}" placeholder="S1B" min="0" max="21" /><br>
+      <input type="number" id="set2b-${id}" value="${saved.sets[3]}" placeholder="S2B" min="0" max="21" />
+    </td>
+    <td><button onclick="registrarResultado('${canchaId}', '${id}', '${juego.teamA}', '${juego.teamB}', '${juego.phase}')">Registrar</button></td>
   `;
 
   return row;
@@ -92,17 +95,34 @@ function mostrarJuegos() {
   actualizarTablaPuntos();
 }
 
-function registrarGanador(canchaId, rowId, teamA, teamB, grupo) {
-  const select = document.getElementById(`winner-${rowId}`);
-  const ganador = select.value;
-  if (!ganador) return alert("Selecciona un equipo ganador.");
-  if (!puntos[canchaId][grupo]) return;
+function registrarResultado(canchaId, rowId, teamA, teamB, grupo) {
+  const set1A = parseInt(document.getElementById(`set1-${rowId}`).value);
+  const set2A = parseInt(document.getElementById(`set2-${rowId}`).value);
+  const set1B = parseInt(document.getElementById(`set1b-${rowId}`).value);
+  const set2B = parseInt(document.getElementById(`set2b-${rowId}`).value);
 
-  const anterior = resultados[rowId];
-  if (anterior) puntos[canchaId][grupo][anterior] -= 3;
+  if ([set1A, set2A, set1B, set2B].some(val => isNaN(val))) {
+    return alert("Completa todos los puntos de los sets.");
+  }
+
+  const puntosA = set1A + set2A;
+  const puntosB = set1B + set2B;
+
+  let ganador = "";
+  if (puntosA > puntosB) ganador = teamA;
+  else if (puntosB > puntosA) ganador = teamB;
+  else return alert("Empate no permitido, verifica los sets.");
+
+  const anterior = resultados[rowId]?.ganador;
+  if (anterior && puntos[canchaId][grupo][anterior]) {
+    puntos[canchaId][grupo][anterior] -= 3;
+  }
 
   puntos[canchaId][grupo][ganador] += 3;
-  resultados[rowId] = ganador;
+  resultados[rowId] = {
+    ganador,
+    sets: [set1A, set2A, set1B, set2B]
+  };
 
   localStorage.setItem('puntos', JSON.stringify(puntos));
   localStorage.setItem('resultados', JSON.stringify(resultados));
