@@ -1,48 +1,38 @@
 const juegos = {
   cancha1: [
-    // Estrellitas - Grupo A
-    { time: "08:00", phase: "Grupo A", teamA: "Est1", teamB: "Est2" },
-    { time: "08:40", phase: "Grupo A", teamA: "Est3", teamB: "Est4" },
-    { time: "09:20", phase: "Grupo A", teamA: "Est1", teamB: "Est3" },
-    { time: "10:00", phase: "Grupo A", teamA: "Est2", teamB: "Est4" },
-    { time: "10:40", phase: "Grupo A", teamA: "Est1", teamB: "Est4" },
-    { time: "11:20", phase: "Grupo A", teamA: "Est2", teamB: "Est3" },
-
-    // Estrellitas - Grupo B
-    { time: "12:00", phase: "Grupo B", teamA: "Est5", teamB: "Est6" },
-    { time: "12:40", phase: "Grupo B", teamA: "Est7", teamB: "Est8" },
-    { time: "13:20", phase: "Grupo B", teamA: "Est5", teamB: "Est7" },
-    { time: "14:00", phase: "Grupo B", teamA: "Est6", teamB: "Est8" },
-    { time: "14:40", phase: "Grupo B", teamA: "Est5", teamB: "Est8" },
-    { time: "15:20", phase: "Grupo B", teamA: "Est6", teamB: "Est7" },
-
-    // Estrellitas - finales
-    { time: "16:00", phase: "Semifinal 1", teamA: "1° Grupo A", teamB: "2° Grupo B" },
-    { time: "17:00", phase: "Semifinal 2", teamA: "1° Grupo B", teamB: "2° Grupo A" },
-    { time: "18:0", phase: "Final", teamA: "Ganador SF1", teamB: "Ganador SF2" }
-  ],
-  cancha2: [
-    // Supernova - Grupo A
-    { time: "08:00", phase: "Grupo A", teamA: "Sup1", teamB: "Sup2" },
-    { time: "08:40", phase: "Grupo A", teamA: "Sup3", teamB: "Sup4" },
-    { time: "09:20", phase: "Grupo A", teamA: "Sup1", teamB: "Sup3" },
-    { time: "10:00", phase: "Grupo A", teamA: "Sup2", teamB: "Sup4" },
-    { time: "10:40", phase: "Grupo A", teamA: "Sup1", teamB: "Sup4" },
-    { time: "11:20", phase: "Grupo A", teamA: "Sup2", teamB: "Sup3" },
-
-    // Supernova - Grupo B
-    { time: "12:00", phase: "Grupo B", teamA: "Sup5", teamB: "Sup6" },
-    { time: "12:40", phase: "Grupo B", teamA: "Sup7", teamB: "Sup8" },
-    { time: "13:20", phase: "Grupo B", teamA: "Sup5", teamB: "Sup7" },
-    { time: "14:00", phase: "Grupo B", teamA: "Sup6", teamB: "Sup8" },
-    { time: "14:40", phase: "Grupo B", teamA: "Sup5", teamB: "Sup8" },
-    { time: "15:20", phase: "Grupo B", teamA: "Sup6", teamB: "Sup7" },
-
-    // Supernova - finales
+    { time: "08:00", phase: "Grupo A", teamA: "CAR 14 y menores", teamB: "INSTITUTO MEXICO" },
+    { time: "08:40", phase: "Grupo B", teamA: "IRK Presidentes", teamB: "Starlings 14-15" },
+    { time: "09:20", phase: "Grupo A", teamA: "Gladiadores", teamB: "Storm A" },
+    { time: "10:00", phase: "Grupo B", teamA: "Amazonas", teamB: "Storm B" },
+    { time: "10:40", phase: "Grupo A", teamA: "CAR 14 y menores", teamB: "Gladiadores" },
+    { time: "11:20", phase: "Grupo B", teamA: "IRK Presidentes", teamB: "Amazonas" },
+    { time: "12:00", phase: "Grupo A", teamA: "INSTITUTO MEXICO", teamB: "Storm A" },
+    { time: "12:40", phase: "Grupo B", teamA: "Starlings 14-15", teamB: "Storm B" },
+    { time: "13:20", phase: "Grupo A", teamA: "CAR 14 y menores", teamB: "Storm A" },
+    { time: "14:00", phase: "Grupo B", teamA: "IRK Presidentes", teamB: "Storm B" },
+    { time: "14:40", phase: "Grupo A", teamA: "INSTITUTO MEXICO", teamB: "Gladiadores" },
+    { time: "15:20", phase: "Grupo B", teamA: "Starlings 14-15", teamB: "Amazonas" },
     { time: "16:00", phase: "Semifinal 1", teamA: "1° Grupo A", teamB: "2° Grupo B" },
     { time: "17:00", phase: "Semifinal 2", teamA: "1° Grupo B", teamB: "2° Grupo A" },
     { time: "18:00", phase: "Final", teamA: "Ganador SF1", teamB: "Ganador SF2" }
-  ]
+  ],
+  cancha2: [
+    { time: "08:00", phase: "Grupo A", teamA: "CAR 12-13", teamB: "Instituto Mexico" },
+    { time: "08:40", phase: "Grupo B", teamA: "Vaquitas", teamB: "Amazonas" },
+    { time: "09:20", phase: "Grupo A", teamA: "Starlings Rosa", teamB: "Becerritas" },
+    { time: "10:00", phase: "Grupo B", teamA: "Starlings 12-13", teamB: "Gladiadores" },
+    { time: "10:40", phase: "Grupo A", teamA: "CAR 12-13", teamB: "Starlings Rosa" },
+    { time: "11:20", phase: "Grupo B", teamA: "Starlings 12-13", teamB: "Vaquitas" },
+    { time: "12:00", phase: "Grupo A", teamA: "Instituto Mexico", teamB: "Becerritas" },
+    { time: "12:40", phase: "Grupo B", teamA: "Gladiadores", teamB: "Amazonas" },
+    { time: "13:20", phase: "Grupo A", teamA: "CAR 12-13", teamB: "Becerritas" },
+    { time: "14:00", phase: "Grupo B", teamA: "Starlings 12-13", teamB: "Amazonas" },
+    { time: "14:40", phase: "Grupo A", teamA: "Instituto Mexico", teamB: "Starlings Rosa" },
+    { time: "15:20", phase: "Grupo B", teamA: "Gladiadores", teamB: "Vaquitas" },
+    { time: "16:00", phase: "Semifinal 1", teamA: "1° Grupo A", teamB: "2° Grupo B" },
+    { time: "17:00", phase: "Semifinal 2", teamA: "1° Grupo B", teamB: "2° Grupo A" },
+    { time: "18:00", phase: "Final", teamA: "Ganador SF1", teamB: "Ganador SF2" }
+]
 };
 
 // ... juegos definido como antes ...
