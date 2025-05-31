@@ -7,7 +7,7 @@ const juegos = {
     { time: "10:40", phase: "Grupo A", teamA: "IRK Presidentes", teamB: "Starlings 14-15" },//
 
     { time: "11:20", phase: "Grupo B", teamA: "CAR 14 y menores", teamB: "Storm B" },//
-    { time: "12:00", phase: "Grupo A", teamA: "Starlings AR", teamB: "Amazonas" },//
+    { time: "12:00", phase: "Grupo B", teamA: "Starlings AR", teamB: "Amazonas" },//
 
     { time: "12:40", phase: "Grupo B", teamA: "Instituto Mex", teamB: "Amazonas" },//
     { time: "15:20", phase: "Grupo B", teamA: "Starlings AR", teamB: "Storm B" },//
