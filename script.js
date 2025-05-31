@@ -6,7 +6,7 @@ const juegos = {
     { time: "10:00", phase: "Grupo B", teamA: "Amazonas", teamB: "Storm B" },//
     { time: "10:40", phase: "Grupo A", teamA: "IRK Presidentes", teamB: "Starlings 14-15" },//
 
-    { time: "11:20", phase: "Grupo B", teamA: "CAR 14 y menores", teamB: "Storm B" },//
+    { time: "11:20", phase: "Grupo A", teamA: "CAR 14 y menores", teamB: "Storm A" },//
     { time: "12:00", phase: "Grupo B", teamA: "Starlings AR", teamB: "Amazonas" },//
 
     { time: "12:40", phase: "Grupo B", teamA: "Instituto Mex", teamB: "Amazonas" },//
@@ -28,7 +28,7 @@ const juegos = {
     { time: "11:20", phase: "Grupo B",  teamA: "Vaquitas", teamB: "Amazonas" },//
     { time: "12:00", phase: "Grupo A", teamA: "Becerritas", teamB: "CAR 12-13"  },//
 
-    { time: "12:40", phase: "Grupo A", teamA: "Instituto Mexico", teamB: "Gladiadores B"},//
+    { time: "12:40", phase: "Grupo A", teamA: "Instituto Mex", teamB: "Gladiadores B"},//
     { time: "13:20", phase: "Grupo B",  teamA: "Vaquitas", teamB: "Galdiadores A"},//
     { time: "14:00", phase: "Grupo B", teamA: "Amazonas", teamB: "Gladiadores A" },//
     { time: "14:40", phase: "Grupo A", teamA: "Becerritas", teamB: "Instituto Mex" },//
