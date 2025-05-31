@@ -29,7 +29,7 @@ const juegos = {
     { time: "12:00", phase: "Grupo A", teamA: "Becerritas", teamB: "CAR 12-13"  },//
 
     { time: "12:40", phase: "Grupo A", teamA: "Instituto Mex", teamB: "Gladiadores B"},//
-    { time: "13:20", phase: "Grupo B",  teamA: "Vaquitas", teamB: "Galdiadores A"},//
+    { time: "13:20", phase: "Grupo B",  teamA: "Vaquitas", teamB: "Gladiadores A"},//
     { time: "14:00", phase: "Grupo B", teamA: "Amazonas", teamB: "Gladiadores A" },//
     { time: "14:40", phase: "Grupo A", teamA: "Becerritas", teamB: "Instituto Mex" },//
     { time: "15:20", phase: "Grupo B", teamA: "Vaquitas", teamB: "Starlings 12-13" },//
